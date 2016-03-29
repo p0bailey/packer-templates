@@ -10,6 +10,17 @@ https://github.com/p0bailey/ansible-packer
 
 ## Usage
 
+AWS credentials.
+
+Place AWS vars into ~.bashrc
+
+```
+export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxx
+export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Run
+
 ```
 packer build aws-demo.js
 ```
