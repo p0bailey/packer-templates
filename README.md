@@ -22,11 +22,13 @@ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Run
 
 ```
-packer build aws-demo.js
+packer build -only=virtualbox-iso build.js
+
+packer build -only=amazon-ebs build.js
+
 ```
 
 Packer AWS variables examples.
-
 
 ```
 "type": "amazon-ebs",
