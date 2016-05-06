@@ -1,12 +1,16 @@
-# Packer Demo
+# Packer Templates
 
-Packer demo along with scripts to bake EC2 instances.
+Packer templates for Ubuntu and Centos with custom  scripts to bake EC2 instances and Vagrant boxes.
 
 ## Installation
 
 To install packer use this Ansible role.
 
 https://github.com/p0bailey/ansible-packer
+
+Or install packer manually as described below.
+
+ https://www.packer.io/intro/getting-started/setup.html
 
 ## Usage
 
@@ -19,7 +23,11 @@ export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxx
 export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Run
+Custom provisioning.
+
+Add any custom feature or software package into "scripts/provision.sh"
+
+Run.
 
 ```
 packer build -only=virtualbox-iso build.js
@@ -99,4 +107,4 @@ Phillip Bailey <phillip@bailey.st>
 
 ## License
 
-TODO: Write license
+N/A
