@@ -2,7 +2,7 @@
 
 Packer templates for Ubuntu and Centos with custom  scripts to bake EC2 instances and Vagrant boxes.
 
-## Installation
+## Packer Installation
 
 To install packer use this Ansible role.
 
@@ -12,16 +12,11 @@ Or install packer manually as described below.
 
  https://www.packer.io/intro/getting-started/setup.html
 
-## Usage
+## Vagrant setup.
 
-AWS credentials.
+Installing Vagrant: https://www.vagrantup.com/docs/installation/
 
-Place AWS vars into ~.bashrc
-
-```
-export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxx
-export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
+## Templates usage
 
 Custom provisioning.
 
@@ -34,6 +29,15 @@ packer build -only=virtualbox-iso build.js
 
 packer build -only=amazon-ebs build.js
 
+```
+
+## AWS credentials and variables.
+
+Place AWS vars into ~.bashrc
+
+```
+export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxx
+export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 Packer AWS variables examples.
