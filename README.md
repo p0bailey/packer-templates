@@ -2,6 +2,14 @@
 
 Packer templates for Ubuntu and Centos with custom  scripts to bake EC2 instances and Vagrant boxes.
 
+Supported builds:
+
+centos-6.7
+
+centos-7.1
+
+ubuntu-14.04
+
 ## Packer Installation
 
 To install packer use this Ansible role.
