@@ -38,8 +38,11 @@ Add any custom feature or software package into "scripts/provision.sh"
 Run.
 
 ```
-packer build -only=virtualbox-iso template.json
-packer build -only=amazon-ebs template.json
+make virtualbox
+
+or
+
+make aws
 
 ```
 
