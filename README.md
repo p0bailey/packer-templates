@@ -6,9 +6,14 @@ Supported builds:
 
 centos-6.7
 
+centos-6.8
+
 centos-7.1
 
 ubuntu-14.04
+
+ubuntu-16.04
+
 
 ## Packer Installation
 
