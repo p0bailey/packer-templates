@@ -109,6 +109,14 @@ a function like timestamp.
 
 https://www.packer.io/docs/builders/amazon-instance.html
 
+## OS images.
+
+Centos - http://centos.mirrors.ovh.net/ftp.centos.org/
+
+Ubuntu - http://releases.ubuntu.com/
+
+Debian -
+
 
 ## Contributing
 
