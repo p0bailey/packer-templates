@@ -38,6 +38,16 @@ make aws
 
 ```
 
+Testing on virtualbox.
+
+For convenience each build contains a custom Vagrantfile, to test your newly
+created box please run. 
+
+```
+make vagrant
+```
+
+
 ## AWS credentials and variables.
 
 Place AWS vars into ~.bashrc
