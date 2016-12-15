@@ -4,15 +4,7 @@ Packer templates for Ubuntu and Centos with custom  scripts to bake EC2 instance
 
 Supported builds:
 
-centos-6.7
-
-centos-6.8
-
-centos-7.1
-
-ubuntu-14.04
-
-ubuntu-16.04
+centos-6.8 centos-7.3 debian-8 ubuntu-14.04 ubuntu-16.04
 
 
 ## Packer Installation
@@ -56,20 +48,6 @@ export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 Packer AWS variables examples.
-
-```
-"type": "amazon-ebs",
-   "access_key": "{{user `aws_access_key`}}",
-   "secret_key": "{{user `aws_secret_key`}}",
-   "region": "eu-west-1",
-   "source_ami": "ami-f9fee58a",
-   "instance_type": "t2.nano",
-   "ssh_username": "ubuntu",
-   "vpc_id": "vpc-091d116c",
-   "subnet_id": "subnet-3fa82249",
-   "security_group_id": "sg-89235bed",
-   "ami_name": "hello-app {{timestamp}}"
-```
 
 type = The amazon-ebs Packer builder is able to create Amazon AMIs backed by
 EBS volumes for use in EC2.

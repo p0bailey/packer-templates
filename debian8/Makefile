@@ -8,10 +8,14 @@ all:
 
 
 virtualbox: ## build virtualbox image
+
 	packer build -only=virtualbox-iso template.json
+
+	vagrant up
 
 aws: ## build aws image
 	packer build -only=amazon-ebs template.json
 
 vagrant: ## starts the vagrant box
 	vagrant up
+	vagrant ssh

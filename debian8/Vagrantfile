@@ -8,9 +8,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 config.vm.define "box" do |box|
 
-    box.vm.box = "file://centos-6.7-x64-virtualbox.box"
+    box.vm.box = "file://debian-8.6.0-x64-virtualbox.box"
     box.vm.network :private_network, ip: "192.168.56.3"
-    box.vm.hostname = "centos-6.7"
+    box.vm.hostname = "debian8"
     box.ssh.insert_key = false
 
     box.vm.provider "virtualbox" do |v|

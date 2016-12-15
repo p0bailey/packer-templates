@@ -22,43 +22,37 @@
 {
   "type": "virtualbox-iso",
 "boot_command": [
-  "<esc><wait>",
-  "<esc><wait>",
-  "<enter><wait>",
-  "/install/vmlinuz<wait>",
-  " auto<wait>",
-  " console-setup/ask_detect=false<wait>",
-  " console-setup/layoutcode=us<wait>",
-  " console-setup/modelcode=pc105<wait>",
-  " debian-installer=en_US<wait>",
-  " fb=false<wait>",
-  " initrd=/install/initrd.gz<wait>",
-  " kbd-chooser/method=us<wait>",
-  " keyboard-configuration/layout=USA<wait>",
-  " keyboard-configuration/variant=USA<wait>",
-  " locale=en_US<wait>",
-  " netcfg/get_hostname=ubuntu-1404<wait>",
-  " netcfg/get_domain=vagrantup.com<wait>",
-  " noapic<wait>",
-  " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg<wait>",
-  " -- <wait>",
-  "<enter><wait>"
+    "<esc><wait>",
+          "install <wait>",
+          "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+          "debian-installer=en_US <wait>",
+          "auto <wait>",
+          "locale=en_US <wait>",
+          "kbd-chooser/method=us <wait>",
+          "keyboard-configuration/xkb-keymap=us <wait>",
+          "netcfg/get_hostname={{ .Name }} <wait>",
+          "netcfg/get_domain=vagrantup.com <wait>",
+          "fb=false <wait>",
+          "debconf/frontend=noninteractive <wait>",
+          "console-setup/ask_detect=false <wait>",
+          "console-keymaps-at/keymap=us <wait>",
+          "<enter><wait>"
 ],
 "boot_wait": "10s",
 "disk_size": 81920,
-"guest_os_type": "Ubuntu_64",
+"guest_os_type": "Debian_64",
 "http_directory": "http",
-"iso_checksum": "2ac1f3e0de626e54d05065d6f549fa3a",
-"iso_checksum_type": "md5",
-"iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.4-server-amd64.iso",
+"iso_checksum": "6c3b53d2a33e34644153683f4492a7773340812c540eb3c5fdeee61e0c8dbafb2f9d634db0d2518b44fbf16770ec15f80561b49c280e27984e887ac71bfb3c3a",
+"iso_checksum_type": "sha512",
+"iso_url": "http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-netinst.iso",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
 "ssh_wait_timeout": "10000s",
-"shutdown_command": "echo 'shutdown -P now' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
+"shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
 "vboxmanage": [
-  [ "modifyvm", "{{.Name}}", "--memory", "512" ],
-  [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
+  [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+  [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
 ]
 
 }],
@@ -90,7 +84,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "ubuntu-14-04-x64-virtualbox.box"
+          "output": "debian-8.6.0-x64-virtualbox.box"
         }
       }
     }
