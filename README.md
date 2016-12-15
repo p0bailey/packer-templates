@@ -40,8 +40,8 @@ make aws
 
 Testing on virtualbox.
 
-For convenience each build contains a custom Vagrantfile, to test your newly
-created box please run. 
+For convenience each build directory contains a custom Vagrantfile,
+to test your newly created box please run. 
 
 ```
 make vagrant
