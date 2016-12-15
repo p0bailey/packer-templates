@@ -41,7 +41,7 @@ make aws
 Testing on virtualbox.
 
 For convenience each build directory contains a custom Vagrantfile,
-to test your newly created box please run. 
+to test your newly created box please run.
 
 ```
 make vagrant
@@ -99,11 +99,11 @@ https://www.packer.io/docs/builders/amazon-instance.html
 
 ## OS images.
 
-Centos - http://centos.mirrors.ovh.net/ftp.centos.org/
+Centos - http://centos.serverspace.co.uk/centos
 
 Ubuntu - http://releases.ubuntu.com/
 
-Debian -
+Debian - http://cdimage.debian.org/debian-cd
 
 
 ## Contributing
