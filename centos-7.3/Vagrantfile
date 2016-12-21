@@ -10,7 +10,7 @@ config.vm.define "box" do |box|
 
     box.vm.box = "file://centos-7.3-x64-virtualbox.box"
     box.vm.network :private_network, ip: "192.168.56.3"
-    box.vm.hostname = "trusty"
+    box.vm.hostname = "centos-7.3"
     box.ssh.insert_key = false
 
     box.vm.provider "virtualbox" do |v|
