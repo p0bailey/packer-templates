@@ -1,6 +1,6 @@
 # Packer Templates
 
-Packer templates for Ubuntu and Centos with custom  scripts to bake EC2 instances and Vagrant boxes.
+Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake EC2 instances and Vagrant boxes.
 
 Supported builds:
 
