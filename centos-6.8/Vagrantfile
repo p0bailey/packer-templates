@@ -10,12 +10,12 @@ config.vm.define "box" do |box|
 
     box.vm.box = "file://centos-6.8-x64-virtualbox.box"
     box.vm.network :private_network, ip: "192.168.56.3"
-    box.vm.hostname = "centos-6.8"
+    box.vm.hostname = "centos-6.8-demo"
     box.ssh.insert_key = false
 
     box.vm.provider "virtualbox" do |v|
-        v.customize [ "modifyvm", :id, "--cpus", "1" ]
-        v.customize [ "modifyvm", :id, "--memory", "512" ]
+        v.customize [ "modifyvm", :id, "--cpus", "2" ]
+        v.customize [ "modifyvm", :id, "--memory", "1024" ]
     end
 
 end

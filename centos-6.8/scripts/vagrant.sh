@@ -1,4 +1,4 @@
-
+#!/bin/sh -eux
 date > /etc/vagrant_box_build_time
 
 mkdir -pm 700 /home/vagrant/.ssh

@@ -1,19 +1,10 @@
-#!/bin/bash -eux
-
+#!/bin/sh -eux
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get -y upgrade
-apt-get -y install linux-headers-$(uname -r)  build-essential dkms
+apt-get -y install linux-headers-$(uname -r) build-essential dkms
 
-# Add vagrant user to sudoers.
-echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
-sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
-
-sudo mkdir /media/VBoxGuestAdditions
-sudo mount -o loop,ro /home/vagrant/VBoxGuestAdditions.iso /media/VBoxGuestAdditions
-sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
-sudo umount /media/VBoxGuestAdditions
-sudo rmdir /media/VBoxGuestAdditions
-rm /home/vagrant/VBoxGuestAdditions.iso
+sed -i -e '/Defaults\s\+env_reset/a Defaults\texempt_group=sudo' /etc/sudoers;
+sed -i -e 's/%sudo\s*ALL=(ALL:ALL) ALL/%sudo\tALL=(ALL) NOPASSWD:ALL/g' /etc/sudoers;
 
 echo "UseDNS no" >> /etc/ssh/sshd_config

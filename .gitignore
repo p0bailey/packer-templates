@@ -2,3 +2,4 @@
 *.box
 packer_cache/
 /.vagrant
+provision.yml

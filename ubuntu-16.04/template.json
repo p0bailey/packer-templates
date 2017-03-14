@@ -58,10 +58,11 @@
 "boot_wait": "10s",
 "disk_size": 81920,
 "guest_os_type": "Ubuntu_64",
+"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
-"iso_checksum": "29a8b9009509b39d542ecb229787cdf48f05e739a932289de9e9858d7c487c80",
+"iso_checksum": "737ae7041212c628de5751d15c3016058b0e833fdc32e7420209b76ca3d0a535",
 "iso_checksum_type": "sha256",
-"iso_urls": ["http://releases.ubuntu.com/16.04/ubuntu-16.04.1-server-amd64.iso"],
+"iso_urls": ["http://releases.ubuntu.com/16.04/ubuntu-16.04.2-server-amd64.iso"],
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
@@ -69,8 +70,8 @@
 "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
 "vm_name": "packer-ubuntu-16.04-amd64",
 "vboxmanage": [
-  [ "modifyvm", "{{.Name}}", "--memory", "512" ],
-  [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
+  [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+  [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
 ]
 
 }],

@@ -1,4 +1,4 @@
-# #!/bin/bash -eux
+# #!/bin/sh -eux
 date > /etc/vagrant_box_build_time
 
 mkdir /home/vagrant/.ssh

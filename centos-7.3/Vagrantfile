@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 config.vm.define "box" do |box|
 
     box.vm.box = "file://centos-7.3-x64-virtualbox.box"
-    box.vm.network :private_network, ip: "192.168.56.3"
+    box.vm.network :private_network, ip: "192.168.56.33"
     box.vm.hostname = "centos-7.3"
     box.ssh.insert_key = false
 
@@ -17,6 +17,7 @@ config.vm.define "box" do |box|
         v.customize [ "modifyvm", :id, "--cpus", "1" ]
         v.customize [ "modifyvm", :id, "--memory", "512" ]
     end
+
 
 end
 

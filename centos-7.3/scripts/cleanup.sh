@@ -3,3 +3,11 @@ yum -y clean all
 rm -rf VBoxGuestAdditions_*.iso
 rm -rf /tmp/rubygems-*
 
+for ifcfg in $(ls /etc/sysconfig/network-scripts/ifcfg-*)
+do
+    if [ "$(basename ${ifcfg})" != "ifcfg-lo" ]
+    then
+        sed -i '/^UUID/d'   /etc/sysconfig/network-scripts/ifcfg-enp0s3
+        sed -i '/^HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-enp0s3
+    fi
+done
