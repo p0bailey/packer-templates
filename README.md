@@ -43,8 +43,16 @@ Testing on virtualbox.
 For convenience each build directory contains a custom Vagrantfile,
 to test your newly created box please run.
 
+Start Vagrant box.
+
 ```
-make vagrant
+make vagrant_up
+```
+
+Destroy and remove Vagrant box.
+
+```
+vagrant_clean
 ```
 
 
