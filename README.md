@@ -55,6 +55,14 @@ Destroy and remove Vagrant box.
 vagrant_clean
 ```
 
+## Provisioning.
+
+To add additional packages please locate scripts/provision.sh and add your code there.
+
+Installed packages:
+
+- ansible 2.2.1.0
+
 
 ## AWS credentials and variables.
 
