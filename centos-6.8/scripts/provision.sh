@@ -3,5 +3,3 @@ sudo yum install -y python-pip python-devel build-essential libffi-dev libssl-de
 sudo pip install --upgrade pip
 sudo pip install --upgrade setuptools
 sudo pip install ansible
-
-sudo yum -y upgrade
