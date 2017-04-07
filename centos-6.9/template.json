@@ -1,0 +1,91 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "region": "",
+    "source_ami": "",
+    "instance_type": "",
+    "ssh_username": "centos",
+    "vpc_id": "",
+    "subnet_id": "",
+    "security_group_id": "",
+    "ami_name": "hello-app"
+},
+"builders": [
+    {
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "{{user `region`}}",
+    "source_ami": "{{user `source_ami`}}",
+    "instance_type": "{{user `instance_type`}}",
+    "ssh_username": "{{user `ssh_username`}}",
+    "vpc_id": "{{user `vpc_id`}}",
+    "subnet_id": "{{user `subnet_id`}}",
+    "security_group_id": "{{user `security_group_id`}}",
+    "ami_name": "{{user `ami_name`}} {{timestamp}}",
+    "ssh_pty" : "true"
+}
+,
+{
+  "type": "virtualbox-iso",
+"boot_command": [
+  "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+],
+"boot_wait": "10s",
+"disk_size": 40520,
+"guest_os_type": "RedHat_64",
+"guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+"http_directory": "http",
+"iso_checksum": "b23d4d996d2cb5b370120588d5ea18a9cfba7881",
+"iso_checksum_type": "sha1",
+"iso_url": "http://centos.serverspace.co.uk/centos/6.9/isos/x86_64/CentOS-6.9-x86_64-minimal.iso",
+"ssh_username": "vagrant",
+"ssh_password": "vagrant",
+"ssh_port": 22,
+"ssh_wait_timeout": "10000s",
+"shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p",
+"virtualbox_version_file": ".vbox_version",
+"vboxmanage": [
+  [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+  [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
+]
+
+}],
+"provisioners": [
+      {
+        "type": "shell",
+        "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
+        "override": {
+          "virtualbox-iso": {
+            "scripts": [
+              "scripts/base.sh",
+              "scripts/vagrant.sh",
+              "scripts/virtualbox.sh",
+              "scripts/provision.sh",
+              "scripts/cleanup.sh",
+              "scripts/zerodisk.sh"
+            ]
+          },
+          "amazon-ebs": {
+
+            "scripts": [
+              "scripts/provision.sh"
+            ]
+          }
+        }
+      }
+      ],
+"post-processors": [
+    {
+      "type": "vagrant",
+      "override": {
+        "virtualbox": {
+          "output": "centos-6.9-x64-virtualbox.box"
+        }
+      }
+    }
+  ]
+
+
+}
