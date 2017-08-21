@@ -7,6 +7,8 @@ rm -f /home/vagrant/*.sh
 echo "cleaning up dhcp leases"
 rm /var/lib/dhcp/*
 
+rm /home/vagrant/*.iso
+
 echo "Apt cleanup."
 apt-get -y autoremove
 apt-get -y clean
