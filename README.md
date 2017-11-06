@@ -1,3 +1,8 @@
+# Vagrant Boxes
+
+Vagrant boxes built with these packer templates can be found at: https://app.vagrantup.com/p0bailey/
+
+
 # Packer Templates
 
 Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake EC2 instances and Vagrant boxes.
