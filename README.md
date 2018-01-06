@@ -9,7 +9,21 @@ Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake EC2 ins
 
 Supported builds:
 
-centos-6.8 centos-7.3 centos-7.4 debian-8 ubuntu-14.04 ubuntu-16.04
+centos-6.8
+
+centos-6.9
+
+centos-7.3
+
+centos-7.4
+
+debian-8
+
+debian-9
+
+ubuntu-14.04
+
+ubuntu-16.04
 
 
 ## Packer Installation
