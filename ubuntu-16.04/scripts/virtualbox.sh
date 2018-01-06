@@ -11,4 +11,4 @@ sh /tmp/vbox/VBoxLinuxAdditions.run \
             "For more read https://www.virtualbox.org/ticket/12479";
 umount /tmp/vbox;
 rm -rf /tmp/vbox;
-rm -f $HOME_DIR/*.iso;
+rm -f /home/vagrant/*.iso;
