@@ -2,7 +2,7 @@
 .PHONY: all virtualbox aws vagrant_up  vagrant_clean
 .SILENT:
 
-DISTRO = k8
+DISTRO  = k8
 
 all:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
