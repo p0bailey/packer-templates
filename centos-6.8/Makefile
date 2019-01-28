@@ -2,7 +2,7 @@
 .PHONY: all virtualbox aws vagrant_up  vagrant_clean
 .SILENT:
 
-VERSION = 7.3
+VERSION = 6.8
 DISTRO = centos
 
 all:
@@ -11,9 +11,6 @@ all:
 virtualbox: vagrant_clean ## build virtualbox image
 		rm $(DISTRO)-$(VERSION)-x64-virtualbox.box 2>/dev/null; true
 		packer build -only=virtualbox-iso template.json
-
-aws: ## build aws image
-	  packer build -only=amazon-ebs template.json
 
 vagrant_up: ## starts the vagrant box
 		vagrant up

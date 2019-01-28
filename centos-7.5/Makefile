@@ -1,12 +1,13 @@
 #Authored by Phillip Bailey
-.PHONY: all virtualbox aws vagrant_up  vagrant_clean
+.PHONY: all virtualbox  vagrant_up  vagrant_clean
 .SILENT:
 
-VERSION = 9.7.0
-DISTRO  = debian
+VERSION = 7.5
+DISTRO = centos
 
 all:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
 
 virtualbox: vagrant_clean ## build virtualbox image
 		rm $(DISTRO)-$(VERSION)-x64-virtualbox.box 2>/dev/null; true

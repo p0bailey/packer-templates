@@ -1,32 +1,5 @@
 {
-  "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": "",
-    "region": "",
-    "source_ami": "",
-    "instance_type": "",
-    "ssh_username": "root",
-    "vpc_id": "",
-    "subnet_id": "",
-    "security_group_id": "",
-    "ami_name": "hello-app"
-},
 "builders": [
-    {
-    "type": "amazon-ebs",
-    "access_key": "{{user `aws_access_key`}}",
-    "secret_key": "{{user `aws_secret_key`}}",
-    "region": "{{user `region`}}",
-    "source_ami": "{{user `source_ami`}}",
-    "instance_type": "{{user `instance_type`}}",
-    "ssh_username": "{{user `ssh_username`}}",
-    "vpc_id": "{{user `vpc_id`}}",
-    "subnet_id": "{{user `subnet_id`}}",
-    "security_group_id": "{{user `security_group_id`}}",
-    "ami_name": "{{user `ami_name`}} {{timestamp}}",
-    "ssh_pty" : "true"
-}
-,
 {
   "type": "virtualbox-iso",
 "boot_command": [
@@ -51,9 +24,9 @@
 "guest_os_type": "Debian_64",
 "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
-"iso_checksum": "8775231d6f56a3d8f116eb64fe048f5cbd2ea0f8c092a1cb7608bcb4106f9c85cb69ce68f53bd381019ab40f1c0316843036daf3fd9107c81c58a240334cc747",
+"iso_checksum": "87368242b8332a9ae6ddf48c5265c6618cbbca0497ced6ab1c05c674ac7a7f6aac2adff0534e65976b7d8bfddf4e4e87046190b01f61fecf8a9d75ca49cc7cdf",
 "iso_checksum_type": "sha512",
-"iso_url": "http://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.3.0-amd64-netinst.iso",
+"iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.7.0-amd64-netinst.iso",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
@@ -79,11 +52,6 @@
               "scripts/cleanup.sh",
               "scripts/zerodisk.sh"
             ]
-          },
-          "amazon-ebs": {
-            "scripts": [
-              "scripts/provision.sh"
-            ]
           }
         }
       }
@@ -98,6 +66,4 @@
       }
     }
   ]
-
-
 }

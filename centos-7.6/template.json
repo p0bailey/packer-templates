@@ -10,19 +10,20 @@
 "guest_os_type": "RedHat_64",
 "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
-"iso_checksum": "28cd663c2267676414496f0929ce7bb285bf2506",
-"iso_checksum_type": "sha1",
-"iso_url": "http://centos.serverspace.co.uk/centos/6.8/isos/x86_64/CentOS-6.8-x86_64-minimal.iso",
+"iso_checksum": "38d5d51d9d100fd73df031ffd6bd8b1297ce24660dc8c13a3b8b4534a4bd291c",
+"iso_checksum_type": "sha256",
+"iso_url": "http://centos.serverspace.co.uk/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
 "ssh_wait_timeout": "10000s",
-"shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p",
+"shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -hP now",
 "virtualbox_version_file": ".vbox_version",
 "vboxmanage": [
   [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
   [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
 ]
+
 }],
 "provisioners": [
       {
@@ -47,7 +48,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "centos-6.8-x64-virtualbox.box"
+          "output": "centos-7.6-x64-virtualbox.box"
         }
       }
     }

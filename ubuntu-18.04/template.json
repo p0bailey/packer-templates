@@ -1,32 +1,5 @@
 {
-  "variables": {
-    "aws_access_key": "",
-    "aws_secret_key": "",
-    "region": "",
-    "source_ami": "",
-    "instance_type": "",
-    "ssh_username": "ubuntu",
-    "vpc_id": "",
-    "subnet_id": "",
-    "security_group_id": "",
-    "ami_name": "hello-app"
-},
 "builders": [
-    {
-    "type": "amazon-ebs",
-    "access_key": "{{user `aws_access_key`}}",
-    "secret_key": "{{user `aws_secret_key`}}",
-    "region": "{{user `region`}}",
-    "source_ami": "{{user `source_ami`}}",
-    "instance_type": "{{user `instance_type`}}",
-    "ssh_username": "{{user `ssh_username`}}",
-    "vpc_id": "{{user `vpc_id`}}",
-    "subnet_id": "{{user `subnet_id`}}",
-    "security_group_id": "{{user `security_group_id`}}",
-    "ami_name": "{{user `ami_name`}} {{timestamp}}",
-    "ssh_pty" : "true"
-}
-,
 {
   "type": "virtualbox-iso",
 "boot_command": [
@@ -68,7 +41,7 @@
 "ssh_port": 22,
 "ssh_wait_timeout": "10000s",
 "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
-"vm_name": "packer-ubuntu-16.04-amd64",
+"vm_name": "packer-ubuntu-18.04-amd64",
 "vboxmanage": [
   [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
   [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
@@ -88,11 +61,6 @@
               "scripts/provision.sh",
               "scripts/cleanup.sh",
               "scripts/zerodisk.sh"
-            ]
-          },
-          "amazon-ebs": {
-            "scripts": [
-              "scripts/provision.sh"
             ]
           }
         }

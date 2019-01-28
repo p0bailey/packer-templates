@@ -17,7 +17,5 @@ config.vm.define "box" do |box|
         v.customize [ "modifyvm", :id, "--cpus", "1" ]
         v.customize [ "modifyvm", :id, "--memory", "512" ]
     end
-
 end
-
  end
