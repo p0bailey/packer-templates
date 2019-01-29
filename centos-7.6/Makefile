@@ -1,5 +1,5 @@
 #Authored by Phillip Bailey
-.PHONY: all virtualbox  vagrant_up  vagrant_clean
+.PHONY: all virtualbox  vagrant_up  vagrant_clean vagrant_stop_all vagrant_status
 .SILENT:
 
 VERSION = 7.6
