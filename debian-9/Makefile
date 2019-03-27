@@ -2,11 +2,11 @@
 .PHONY: all virtualbox  vagrant_up  vagrant_clean vagrant_stop_all vagrant_status
 .SILENT:
 
-VERSION = 9.7.0
+VERSION = 9.8.0
 DISTRO  = debian
 
 all:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST)  | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 virtualbox: vagrant_clean vagrant_stop_all ## build virtualbox image
 	rm $(DISTRO)-$(VERSION)-x64-virtualbox.box 2>/dev/null; true

@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 config.vm.define "box" do |box|
 
-    box.vm.box = "file://debian-9.7.0-x64-virtualbox.box"
+    box.vm.box = "file://debian-9.8.0-x64-virtualbox.box"
     box.vm.network :private_network, ip: "192.168.56.3"
     box.vm.hostname = "debian9"
     box.ssh.insert_key = false
