@@ -1,4 +1,0 @@
-packer_cache/*
-*.box
-iso/*
-.vagrant/*

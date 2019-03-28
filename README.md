@@ -1,90 +1,113 @@
-# Vagrant Boxes
+# packer-templates
 
-Vagrant boxes built with these packer templates can be found at: https://app.vagrantup.com/p0bailey/
+Table of content.
+
+
+<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [packer-templates](#packer-templates)   
+- [Packer Templates](#packer-templates)   
+   - [Installing / Getting started](#installing-getting-started)   
+      - [Prerequisites](#prerequisites)   
+   - [Templates usage](#templates-usage)   
+   - [Vagrantfile](#vagrantfile)   
+   - [OS images.](#os-images)   
+   - [Changelog](#changelog)   
+   - [Contributing](#contributing)   
+   - [Authors](#authors)   
+   - [License](#license)   
+
+<!-- /MDTOC -->
+
+
+
+Vagrant boxes built with these packer templates are available at: https://app.vagrantup.com/p0bailey/
 
 
 # Packer Templates
 
-Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake EC2 instances and Vagrant boxes.
+Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake Vagrant boxes and upload them into Vagrant cloud.
 
 Supported builds:
 
-debian-8
 
-debian-9
-
-ubuntu-18.04
-
-ubuntu-16.04
-
-ubuntu-14.04
-
-k8 - Docker and Kubernetes
-
-centos-7.6
-
-centos-7.5
-
-centos-7.4
-
-centos-7.3
-
-centos-6.9
-
-centos-6.8
+|  Distribution | Debian  | Ubuntu  | CentOS  |Misc  |
+|---|---|---|---|---|
+|   |   9|  18.04  |7.6   |k8 (Kubernetes + Docker)   |
 
 
 
+## Installing / Getting started
 
+### Prerequisites
 
-## Packer Installation
+* Terraform - www.terraform.io
 
-To install packer use this Ansible role.
+* Packer - www.packer.io
 
-https://github.com/p0bailey/ansible-packer
+* Vagrant - www.vagrantup.com
 
-Or install packer manually as described below.
+* `vagrant plugin install vagrant-vbguest`
 
- https://www.packer.io/intro/getting-started/setup.html
-
-## Vagrant setup.
-
-Installing Vagrant: https://www.vagrantup.com/docs/installation/
+* Virtualbox - https://www.virtualbox.org/
 
 ## Templates usage
 
-Custom provisioning.
+`git clone https://github.com/p0bailey/packer-templates.git`
 
-Add any custom feature or software package into "scripts/provision.sh"
+Workflow
 
-Run.
+`make virtualbox`
 
+`make vagrant_up`
+
+`make vagrant_upload`
+
+
+Makefile Menu
 ```
-make virtualbox
-
-```
-
-Testing on virtualbox.
-
-For convenience each build directory contains a custom Vagrantfile,
-to test your newly created box please run.
-
-Start Vagrant box.
-
-```
-make vagrant_up
-```
-
-Destroy and remove Vagrant box.
-
-```
-vagrant_clean
+virtualbox                     build virtualbox image
+vagrant_up                     starts the vagrant box
+vagrant_upload                 Publish and release a new Vagrant Box on Vagrant Cloud
+vagrant_clean                  stops and removes vagrant box
+vagrant_stop_all               stop all Vagrant machines
+vagrant_status                 outputs status Vagrant environments for this user
 ```
 
-## Provisioning.
+## Vagrantfile
 
-To add additional packages please locate scripts/provision.sh and add your code there.
+Example Vagrantfile to consume Vagrant Boxes built from this repository.
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
+IP_ADDR = "192.168.56.55"
+HOSTNAME = "server-vagrant"
+BOX_NAME = "p0bailey/box_name"
+CPUS = "2"
+MEMORY = "1024"
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+config.vm.define "box" do |box|
+
+    box.vm.box = "BOX_NAME"
+    box.vm.network :private_network, ip: "IP_ADDR"
+    box.vm.hostname = "HOSTNAME"
+    box.ssh.insert_key = false
+
+    box.vm.provider "virtualbox" do |v|
+        v.customize [ "modifyvm", :id, "--cpus", "CPUS" ]
+        v.customize [ "modifyvm", :id, "--memory", "MEMORY" ]
+    end
+
+end
+ end
+
+
+```
 
 ## OS images.
 
@@ -94,6 +117,8 @@ Ubuntu - http://releases.ubuntu.com/
 
 Debian - http://cdimage.debian.org/debian-cd
 
+
+## Changelog
 
 ## Contributing
 
