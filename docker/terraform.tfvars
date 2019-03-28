@@ -1,4 +1,4 @@
-distro = "k8"
+distro = "docker"
 
 version = "stable"
 
@@ -22,8 +22,8 @@ vagrant_cloud_version = "1.0"
 
 vagrant_cloud_username = "p0bailey"
 
-vagrant_cloud_box_description = "k8 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_description = "docker - https://github.com/p0bailey/packer-templates"
 
-vagrant_cloud_box_short_description = "k8 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_short_description = "docker - https://github.com/p0bailey/packer-templates"
 
 vagrant_cloud_box_version_description = "https://github.com/p0bailey/packer-templates"

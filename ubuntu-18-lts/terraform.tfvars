@@ -26,4 +26,4 @@ vagrant_cloud_box_description = "LTS - ubuntu-18.04.2 - https://github.com/p0bai
 
 vagrant_cloud_box_short_description = "LTS ubuntu-18.04.2 - https://github.com/p0bailey/packer-templates"
 
-vagrant_cloud_box_version_description = "LTS ubuntu-18.04.2 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_version_description = "https://github.com/p0bailey/packer-templates"
