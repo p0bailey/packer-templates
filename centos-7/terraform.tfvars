@@ -8,7 +8,7 @@ iso_url = "http://centos.serverspace.co.uk/centos/7.6.1810/isos/x86_64/CentOS-7-
 
 iso_checksum_type = "sha256"
 
-memory = "3000"
+memory = "1024"
 
 cpus = "2"
 

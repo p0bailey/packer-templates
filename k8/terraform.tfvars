@@ -8,9 +8,9 @@ iso_url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.8.
 
 iso_checksum_type = "sha512"
 
-memory = "2048"
+memory = "1024"
 
-cpus = "4"
+cpus = "2"
 
 ip_address = "192.168.56.20"
 

@@ -8,9 +8,9 @@ iso_url = "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04
 
 iso_checksum_type = "sha256"
 
-memory = "2048"
+memory = "1024"
 
-cpus = "4"
+cpus = "2"
 
 ip_address = "192.168.56.20"
 
