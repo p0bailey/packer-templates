@@ -17,7 +17,7 @@ config.vm.define "box" do |box|
     box.vm.network :private_network, ip: "#{ENV['ip_address']}"
     box.vm.hostname = "#{ENV['distro']}"
     box.ssh.insert_key = false
-
+    
     box.vm.provider "virtualbox" do |v|
         v.customize [ "modifyvm", :id, "--cpus", "#{ENV['cpus']}" ]
         v.customize [ "modifyvm", :id, "--memory", "#{ENV['memory']}" ]

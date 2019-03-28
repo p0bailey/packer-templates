@@ -3,38 +3,23 @@
 {
   "type": "virtualbox-iso",
 "boot_command": [
-  "<esc><wait>",
-  "install <wait>",
-  " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
-  "debian-installer=en_US.UTF-8 <wait>",
-  "auto <wait>",
-  "locale=en_US.UTF-8 <wait>",
-  "kbd-chooser/method=us <wait>",
-  "keyboard-configuration/xkb-keymap=us <wait>",
-  "netcfg/get_hostname={{ .Name }} <wait>",
-  "netcfg/get_domain=vagrantup.com <wait>",
-  "fb=false <wait>",
-  "debconf/frontend=noninteractive <wait>",
-  "console-setup/ask_detect=false <wait>",
-  "console-keymaps-at/keymap=us <wait>",
-  "grub-installer/bootdev=/dev/sda <wait>",
-  "<enter><wait>"
+  "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
 ],
 "boot_wait": "10s",
 "disk_size": 20000,
-"guest_os_type": "Debian_64",
+"guest_os_type": "RedHat_64",
 "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
-"iso_checksum": "cc4a6bd50925c1c4af98049060e304494bc9da61eb5eb272c556d67608de14d4e6a4b8bc1c9412a0f810083912e228569f3771ffffa7174538f3e26f45a05245",
-"iso_checksum_type": "sha512",
-"iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.8.0-amd64-netinst.iso",
+"iso_checksum": "38d5d51d9d100fd73df031ffd6bd8b1297ce24660dc8c13a3b8b4534a4bd291c",
+"iso_checksum_type": "sha256",
+"iso_url": "http://centos.serverspace.co.uk/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
 "ssh_wait_timeout": "10000s",
 "shutdown_command": "echo vagrant|sudo -S /sbin/shutdown -hP now",
 "vboxmanage": [
-  [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+  [ "modifyvm", "{{.Name}}", "--memory", "3000" ],
   [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
 ]
 }],
@@ -61,7 +46,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "debian-9-x64-virtualbox.box"
+          "output": "centos-7-x64-virtualbox.box"
         }
       }
     }
