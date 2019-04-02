@@ -47,8 +47,6 @@ Supported builds:
 
 * Vagrant - www.vagrantup.com
 
-* `vagrant plugin install vagrant-vbguest`
-
 * Virtualbox - https://www.virtualbox.org/
 
 ## Templates usage
