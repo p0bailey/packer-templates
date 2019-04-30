@@ -2,9 +2,9 @@ distro = "k8"
 
 version = "stable"
 
-iso_checksum = "cc4a6bd50925c1c4af98049060e304494bc9da61eb5eb272c556d67608de14d4e6a4b8bc1c9412a0f810083912e228569f3771ffffa7174538f3e26f45a05245"
+iso_checksum = "42d9818abc4a08681dc0638f07e7aeb35d0c44646ab1e5b05a31a71d76c99da52b6192db9a3e852171ac78c2ba6b110b337c0b562c7be3d32e86a105023a6a0c"
 
-iso_url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.8.0-amd64-netinst.iso"
+iso_url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.9.0-amd64-netinst.iso"
 
 iso_checksum_type = "sha512"
 
@@ -18,7 +18,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.2"
+vagrant_cloud_version = "1.3"
 
 vagrant_cloud_username = "p0bailey"
 
