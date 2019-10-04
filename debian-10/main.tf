@@ -27,7 +27,7 @@ data "template_file" "example" {
     memory            = "${var.memory}"
     cpus              = "${var.cpus}"
     distro            = "${var.distro}"
-    distro_version    = "${var.release}"
+    release           = "${var.release}"
   }
 }
 

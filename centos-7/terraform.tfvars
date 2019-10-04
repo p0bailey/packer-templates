@@ -1,6 +1,6 @@
 distro = "centos"
 
-version = "7"
+release = "7"
 
 iso_checksum = "38d5d51d9d100fd73df031ffd6bd8b1297ce24660dc8c13a3b8b4534a4bd291c"
 
@@ -18,7 +18,7 @@ guest_os_type = "RedHat_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.0"
+vagrant_cloud_version = "1.1"
 
 vagrant_cloud_username = "p0bailey"
 
