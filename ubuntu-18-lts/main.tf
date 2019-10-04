@@ -13,12 +13,12 @@ variable "cpus" {}
 
 variable "distro" {}
 
-variable "version" {}
+variable "release" {}
 
 data "template_file" "example" {
   template = "${file("template.tpl")}"
 
-  vars {
+  vars = {
     iso_checksum      = "${var.iso_checksum}"
     iso_url           = "${var.iso_url}"
     iso_checksum_type = "${var.iso_checksum_type}"
@@ -26,12 +26,12 @@ data "template_file" "example" {
     memory            = "${var.memory}"
     cpus              = "${var.cpus}"
     distro            = "${var.distro}"
-    version           = "${var.version}"
+    release           = "${var.release}"
   }
 }
 
 resource "null_resource" "packer" {
-  triggers {
+  triggers = {
     key = "${uuid()}"
   }
 

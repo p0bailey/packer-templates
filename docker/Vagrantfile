@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 ENV['distro']
-ENV['version']
+ENV['release']
 ENV['memory']
 ENV['cpus']
 ENV['ip_address']
@@ -13,7 +13,7 @@ ENV['ip_address']
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 config.vm.define "box" do |box|
-    box.vm.box = "file://#{ENV['distro']}-#{ENV['version']}-x64-virtualbox.box"
+    box.vm.box = "file://#{ENV['distro']}-#{ENV['release']}-x64-virtualbox.box"
     box.vm.network :private_network, ip: "#{ENV['ip_address']}"
     box.vm.hostname = "#{ENV['distro']}"
     box.ssh.insert_key = false
