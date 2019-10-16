@@ -11,9 +11,9 @@ variable "memory" {}
 
 variable "cpus" {}
 
-variable "distro" {}
+variable "distroversion" {}
 
-variable "release" {}
+variable "distro" {}
 
 
 data "template_file" "example" {
@@ -27,7 +27,7 @@ data "template_file" "example" {
     memory            = "${var.memory}"
     cpus              = "${var.cpus}"
     distro            = "${var.distro}"
-    release           = "${var.release}"
+    distroversion     = "${var.distroversion}"
   }
 }
 
