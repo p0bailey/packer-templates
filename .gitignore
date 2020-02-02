@@ -1,4 +1,5 @@
 *.iso
+*.log
 *.vdi
 *.box
 *.ovf

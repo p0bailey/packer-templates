@@ -2,13 +2,15 @@ distro = "centos"
 
 release = "7"
 
-iso_checksum = "38d5d51d9d100fd73df031ffd6bd8b1297ce24660dc8c13a3b8b4534a4bd291c"
+iso_checksum = "9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d"
 
-iso_url = "http://centos.serverspace.co.uk/centos/7.6.1810/isos/x86_64/CentOS-7-x86_64-Minimal-1810.iso"
+iso_url = "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso"
+
+iso_name = "CentOS-7-x86_64-NetInstall-1908.iso"
 
 iso_checksum_type = "sha256"
 
-memory = "1024"
+memory = "4048"
 
 cpus = "2"
 
@@ -18,7 +20,7 @@ guest_os_type = "RedHat_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.1"
+vagrant_cloud_version = "1.2"
 
 vagrant_cloud_username = "p0bailey"
 

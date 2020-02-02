@@ -2,7 +2,7 @@
 .PHONY: all virtualbox  vagrant_up  vagrant_clean vagrant_stop_all vagrant_status
 .SILENT:
 
-$(eval distroversion = $(shell cat terraform.tfvars  | grep -w 'distroversion =' | awk -F'"' '{ print $$2 }' ))
+$(eval release = $(shell cat terraform.tfvars  | grep -w 'release =' | awk -F'"' '{ print $$2 }' ))
 $(eval distro = $(shell cat terraform.tfvars  | grep distro | awk -F'"' '{ print $$2 }' ))
 $(eval memory = $(shell cat terraform.tfvars  | grep memory | awk -F'"' '{ print $$2 }' ))
 $(eval cpus = $(shell cat terraform.tfvars  | grep cpus | awk -F'"' '{ print $$2 }' ))
@@ -21,20 +21,20 @@ virtualbox: vagrant_clean vagrant_stop_all ## Build virtualbox image
 	terraform apply -state=.terraform.tfstate  -auto-approve
 
 vagrant_up: ## Starts  vagrant box
-	distroversion='$(distroversion)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant up
+	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant up
 
 vagrant_upload: ## Publish and release a new Vagrant Box on Vagrant Cloud
-	vagrant cloud publish -f -r $(vagrant_cloud_username)/$(distro)-$(distroversion) $(vagrant_cloud_version) virtualbox $(distro)-$(distroversion)-x64-virtualbox.box \
-	--description "$(distro)-$(distroversion) $(vagrant_cloud_box_description)" \
-	--version-description "$(distro)-$(distroversion) $(vagrant_cloud_box_short_description)" \
-	--distroversion --short-description "$(distro)-$(distroversion) $(vagrant_cloud_box_version_description)"
+	vagrant cloud publish -f -r $(vagrant_cloud_username)/$(distro)-$(release) $(vagrant_cloud_version) virtualbox $(distro)-$(release)-x64-virtualbox.box \
+	--description "$(distro)-$(release) $(vagrant_cloud_box_description)" \
+	--version-description "$(distro)-$(release) $(vagrant_cloud_box_short_description)" \
+	--release --short-description "$(distro)-$(release) $(vagrant_cloud_box_version_description)"
 
 vagrant_reload: ## Starts  vagrant box
-	distroversion='$(distroversion)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant reload
+	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant reload
 
 vagrant_clean: ## Stop and remove current vagrant box
-	distroversion='$(distroversion)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant destroy -f 2>/dev/null; true && \
-	vagrant box remove file://$(distro)-$(distroversion)-x64-virtualbox.box  2>/dev/null; true && \
+	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant destroy -f 2>/dev/null; true && \
+	vagrant box remove file://$(distro)-$(release)-x64-virtualbox.box  2>/dev/null; true && \
 	vagrant box list
 
 vagrant_stop_all: ## Stop all Vagrant machines

@@ -1,6 +1,6 @@
 distro = "debian"
 
-distroversion = "10"
+release = "10"
 
 iso_checksum = "5495c8378b829df7386b9bac5bc701f7ad8b2843d088e8636c89549519cf176100eacb90121af3934a8c5229cbe7d2fd23342eda330d56fb45fb2d91f2117fb4"
 

@@ -3,6 +3,8 @@ variable "iso_checksum" {}
 
 variable "iso_url" {}
 
+variable "iso_name" {}
+
 variable "iso_checksum_type" {}
 
 variable "guest_os_type" {}
@@ -22,6 +24,7 @@ data "template_file" "example" {
   vars = {
     iso_checksum      = "${var.iso_checksum}"
     iso_url           = "${var.iso_url}"
+    iso_name          = "${var.iso_name}"
     iso_checksum_type = "${var.iso_checksum_type}"
     guest_os_type     = "${var.guest_os_type}"
     memory            = "${var.memory}"

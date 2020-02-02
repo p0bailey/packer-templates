@@ -61,7 +61,7 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "${distro}-${distroversion}-x64-virtualbox.box"
+          "output": "${distro}-${release}-x64-virtualbox.box"
         }
       }
     }
