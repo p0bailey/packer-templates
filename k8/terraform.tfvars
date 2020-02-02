@@ -2,15 +2,15 @@ distro = "k8"
 
 release = "stable"
 
-iso_checksum = "6953c392ac4d47cd951b5418a59f857d268ec22fc24c26878053f2b78f9e4bd8dd0791336a55c175a79a6855f89fe18f93125c0c7593977955b3baf4d71fa4b4"
+iso_checksum = "5495c8378b829df7386b9bac5bc701f7ad8b2843d088e8636c89549519cf176100eacb90121af3934a8c5229cbe7d2fd23342eda330d56fb45fb2d91f2117fb4"
 
-iso_url = "https://cdimage.debian.org/cdimage/archive/9.11.0/amd64/iso-cd/debian-9.11.0-amd64-netinst.iso"
+iso_url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.2.0-amd64-netinst.iso"
 
 iso_checksum_type = "sha512"
 
-memory = "1024"
+memory = "4000"
 
-cpus = "2"
+cpus = "4"
 
 ip_address = "192.168.56.20"
 
@@ -18,7 +18,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.8"
+vagrant_cloud_version = "2.0"
 
 vagrant_cloud_username = "p0bailey"
 

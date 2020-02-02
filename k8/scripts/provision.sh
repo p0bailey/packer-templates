@@ -38,3 +38,6 @@ apt install -y  docker-ce kubeadm  kubelet kubernetes-cni
 swapoff -a
 # keep swap off after reboot
 sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+
+echo "Disable nftables"
+update-alternatives --set iptables /usr/sbin/iptables-legacy

@@ -25,17 +25,17 @@
 "guest_os_type": "Debian_64",
 "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
-"iso_checksum": "6953c392ac4d47cd951b5418a59f857d268ec22fc24c26878053f2b78f9e4bd8dd0791336a55c175a79a6855f89fe18f93125c0c7593977955b3baf4d71fa4b4",
+"iso_checksum": "5495c8378b829df7386b9bac5bc701f7ad8b2843d088e8636c89549519cf176100eacb90121af3934a8c5229cbe7d2fd23342eda330d56fb45fb2d91f2117fb4",
 "iso_checksum_type": "sha512",
-"iso_url": "https://cdimage.debian.org/cdimage/archive/9.11.0/amd64/iso-cd/debian-9.11.0-amd64-netinst.iso",
+"iso_url": "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.2.0-amd64-netinst.iso",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,
 "ssh_wait_timeout": "10000s",
 "shutdown_command": "echo vagrant|sudo -S /sbin/shutdown -hP now",
 "vboxmanage": [
-  [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
-  [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
+  [ "modifyvm", "{{.Name}}", "--memory", "4000" ],
+  [ "modifyvm", "{{.Name}}", "--cpus", "4" ]
 ]
 }],
 "provisioners": [
