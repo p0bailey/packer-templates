@@ -12,7 +12,11 @@ apt-get install -y \
      curl \
      gnupg2 \
      software-properties-common \
-     vim
+     vim \
+     python-pip
+
+pip install molecule     
+
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 

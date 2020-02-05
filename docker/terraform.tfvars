@@ -8,9 +8,9 @@ iso_url = "https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.2
 
 iso_checksum_type = "sha512"
 
-memory = "1024"
+memory = "4096"
 
-cpus = "2"
+cpus = "4"
 
 ip_address = "192.168.56.20"
 
@@ -18,7 +18,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.5"
+vagrant_cloud_version = "1.6"
 
 vagrant_cloud_username = "p0bailey"
 
