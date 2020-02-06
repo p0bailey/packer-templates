@@ -8,9 +8,9 @@ iso_url = "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04
 
 iso_checksum_type = "sha256"
 
-memory = "1024"
+memory = "2048"
 
-cpus = "2"
+cpus = "4"
 
 ip_address = "192.168.56.20"
 
@@ -18,7 +18,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.1"
+vagrant_cloud_version = "1.2"
 
 vagrant_cloud_username = "p0bailey"
 

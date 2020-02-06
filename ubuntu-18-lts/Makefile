@@ -24,6 +24,9 @@ virtualbox: vagrant_clean vagrant_stop_all ## Build virtualbox image
 vagrant_up: ## Starts  vagrant box
 	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant up
 
+vagrant_provision: ## Provision an existing vagrant Box.
+	vagrant ssh -- -t  'sudo /vagrant/scripts/provision.sh'
+
 vagrant_upload: ## Publish and release a new Vagrant Box on Vagrant Cloud
 	vagrant cloud publish -f -r $(vagrant_cloud_username)/$(distro)-$(release) $(vagrant_cloud_version) virtualbox $(distro)-$(release)-x64-virtualbox.box \
 	--description "$(distro)-$(release) $(vagrant_cloud_box_description)" \
@@ -32,6 +35,9 @@ vagrant_upload: ## Publish and release a new Vagrant Box on Vagrant Cloud
 
 vagrant_reload: ## Starts  vagrant box
 	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant reload
+
+vagrant_version: ## Gets the latest cloud vagrant_version
+	curl -s https://app.vagrantup.com/$(vagrant_cloud_username)/boxes/$(distro)-$(release) |  jq -r '.versions[0] .version'
 
 vagrant_clean: ## Stop and remove current vagrant box
 	release='$(release)' distro='$(distro)' memory='$(memory)' cpus='$(cpus)' ip_address='$(ip_address)' vagrant destroy -f 2>/dev/null; true && \
