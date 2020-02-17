@@ -47,7 +47,7 @@ cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
 
-AWSVULT_VERSION="v5.2.0"
+AWSVULT_VERSION="v5.3.1"
 wget -N https://github.com/99designs/aws-vault/releases/download/${AWSVULT_VERSION}/aws-vault-linux-amd64 -O /usr/bin/aws-vault && \
 chmod +x /usr/bin/aws-vault
 
