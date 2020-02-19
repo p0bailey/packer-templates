@@ -33,6 +33,10 @@ for i in $INSTALL_NODE_PKGS; do
   npm i -g npm-install-peers $i
 done
 
+# Keybase
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+apt install ./keybase_amd64.deb -y
+
 #LazyDocker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
