@@ -62,7 +62,7 @@ apt install -y  docker-ce
 groupadd docker
 usermod -aG docker vagrant
 
-TERRAFORM_VERSION="0.12.20"
+TERRAFORM_VERSION="0.12.21"
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
