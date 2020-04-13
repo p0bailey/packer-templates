@@ -13,7 +13,10 @@
 "http_directory": "http",
 "iso_checksum": "${iso_checksum}",
 "iso_checksum_type": "${iso_checksum_type}",
-"iso_url": "${iso_url}",
+"iso_urls": [
+  "${iso_name}",
+  "${iso_url}"
+],
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",
 "ssh_port": 22,

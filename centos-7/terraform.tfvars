@@ -2,9 +2,9 @@ distro = "centos"
 
 release = "7"
 
-iso_checksum = "9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d"
+iso_checksum = "6ffa7ad44e8716e4cd6a5c3a85ba5675a935fc0448c260f43b12311356ba85ad"
 
-iso_url = "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso"
+iso_url = "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso"
 
 iso_name = "CentOS-7-x86_64-NetInstall-1908.iso"
 
