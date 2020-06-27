@@ -18,7 +18,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "2.8"
+vagrant_cloud_version = "2.9"
 
 vagrant_cloud_username = "p0bailey"
 
