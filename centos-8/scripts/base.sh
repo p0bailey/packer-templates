@@ -1,13 +1,7 @@
 #!/bin/sh -eux
 
-dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-
 yum -y upgrade
+dnf -y update
 
-yum -y install gcc \
-binutils make gcc-c++ \
-patch libgomp dkms perl \
-epel-release net-tools \
-glibc-headers glibc-devel \
-kernel-headers bzip2 \
-kernel-devel kernel-devel-`uname -r`
+yum -y install epel-release
+dnf install -y  gcc kernel-devel kernel-headers dkms make bzip2 perl
