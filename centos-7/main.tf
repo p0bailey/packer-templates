@@ -5,8 +5,6 @@ variable "iso_url" {}
 
 variable "iso_name" {}
 
-variable "iso_checksum_type" {}
-
 variable "guest_os_type" {}
 
 variable "memory" {}
@@ -22,15 +20,14 @@ data "template_file" "example" {
   template = "${file("template.tpl")}"
 
   vars = {
-    iso_checksum      = "${var.iso_checksum}"
-    iso_url           = "${var.iso_url}"
-    iso_name          = "${var.iso_name}"
-    iso_checksum_type = "${var.iso_checksum_type}"
-    guest_os_type     = "${var.guest_os_type}"
-    memory            = "${var.memory}"
-    cpus              = "${var.cpus}"
-    distro            = "${var.distro}"
-    release           = "${var.release}"
+    iso_checksum  = "${var.iso_checksum}"
+    iso_url       = "${var.iso_url}"
+    iso_name      = "${var.iso_name}"
+    guest_os_type = "${var.guest_os_type}"
+    memory        = "${var.memory}"
+    cpus          = "${var.cpus}"
+    distro        = "${var.distro}"
+    release       = "${var.release}"
   }
 }
 

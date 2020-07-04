@@ -12,7 +12,6 @@
 "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
 "http_directory": "http",
 "iso_checksum": "${iso_checksum}",
-"iso_checksum_type": "${iso_checksum_type}",
 "iso_url": "${iso_url}",
 "ssh_username": "vagrant",
 "ssh_password": "vagrant",

@@ -2,13 +2,11 @@ distro = "centos"
 
 release = "7"
 
-iso_checksum = "6ffa7ad44e8716e4cd6a5c3a85ba5675a935fc0448c260f43b12311356ba85ad"
+iso_checksum = "sha256:659691c28a0e672558b003d223f83938f254b39875ee7559d1a4a14c79173193"
 
-iso_url = "http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso"
+iso_url = "http://mozart.ee.ic.ac.uk/CentOS/7.8.2003/isos/x86_64/CentOS-7-x86_64-Minimal-2003.iso"
 
-iso_name = "CentOS-7-x86_64-NetInstall-1908.iso"
-
-iso_checksum_type = "sha256"
+iso_name = "CentOS-7-x86_64-Minimal-2003.iso"
 
 memory = "4048"
 
@@ -20,12 +18,12 @@ guest_os_type = "RedHat_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.2"
+vagrant_cloud_version = "1.3"
 
 vagrant_cloud_username = "p0bailey"
 
-vagrant_cloud_box_description = "CentOS 7.6 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_description = "CentOS 7.8 - https://github.com/p0bailey/packer-templates"
 
-vagrant_cloud_box_short_description = "CentOS 7.6 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_short_description = "CentOS 7.8 - https://github.com/p0bailey/packer-templates"
 
-vagrant_cloud_box_version_description = "CentOS 7.6 - https://github.com/p0bailey/packer-templates"
+vagrant_cloud_box_version_description = "CentOS 7.8 - https://github.com/p0bailey/packer-templates"
