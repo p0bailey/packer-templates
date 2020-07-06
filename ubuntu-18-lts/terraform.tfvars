@@ -2,11 +2,9 @@ distro = "ubuntu"
 
 release = "18-lts"
 
-iso_checksum = "7d8e0055d663bffa27c1718685085626cb59346e7626ba3d3f476322271f573e"
+iso_checksum = "sha256:e2ecdace33c939527cbc9e8d23576381c493b071107207d2040af72595f8990b"
 
-iso_url = "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.3-server-amd64.iso"
-
-iso_checksum_type = "sha256"
+iso_url = "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.4-server-amd64.iso"
 
 memory = "2048"
 
@@ -18,7 +16,7 @@ guest_os_type = "Debian_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.2"
+vagrant_cloud_version = "1.3"
 
 vagrant_cloud_username = "p0bailey"
 
