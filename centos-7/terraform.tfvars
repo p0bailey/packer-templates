@@ -18,7 +18,7 @@ guest_os_type = "RedHat_64"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.4"
+vagrant_cloud_version = "1.7"
 
 vagrant_cloud_username = "p0bailey"
 
