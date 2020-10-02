@@ -4,7 +4,7 @@ release = "7"
 
 iso_checksum = "sha256:659691c28a0e672558b003d223f83938f254b39875ee7559d1a4a14c79173193"
 
-iso_url = "http://mozart.ee.ic.ac.uk/CentOS/7.8.2003/isos/x86_64/CentOS-7-x86_64-Minimal-2003.iso"
+iso_url = "http://mirror.cwcs.co.uk/centos/7.8.2003/isos/x86_64/CentOS-7-x86_64-Minimal-2003.iso"
 
 iso_name = "CentOS-7-x86_64-Minimal-2003.iso"
 
