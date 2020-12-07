@@ -13,7 +13,7 @@ release = "dev"
 
 # Vagrant Cloud Variables
 
-vagrant_cloud_version = "1.0"
+vagrant_cloud_version = "1.1"
 
 vagrant_cloud_username = "p0bailey"
 
