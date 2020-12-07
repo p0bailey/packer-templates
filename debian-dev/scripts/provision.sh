@@ -20,8 +20,14 @@ apt-get install -y \
      python3-pip \
      unzip \
      nodejs \
+     npm \
      graphicsmagick \
      htop
+
+PIP_INSTALL_PKGS="ansible molecule asciinema awscli glances saws"
+for i in $PIP_INSTALL_PKGS; do
+ sudo pip3 install $i
+done
 
 INSTALL_PKGS="tig direnv jq vim zsh neovim"
 for i in $INSTALL_PKGS; do
@@ -30,12 +36,13 @@ done
 
 INSTALL_NODE_PKGS="cli-github dockly fx terminalizer"
 for i in $INSTALL_NODE_PKGS; do
-  npm i -g npm-install-peers $i
+  sudo npm i -g npm-install-peers --unsafe $i
 done
 
-# Keybase
-curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-apt install ./keybase_amd64.deb -y
+GO_VERSION="1.15.6"
+AWSVULT_VERSION="v5.3.2"
+VAULT_VERSION="1.6.0"
+TERRAFORM_VERSION="0.14.0"
 
 #LazyDocker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
@@ -44,11 +51,6 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
-
-
-pip3 install ansible molecule asciinema
-pip install awscli glances saws
-
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
@@ -66,22 +68,17 @@ apt install -y  docker-ce
 groupadd docker
 usermod -aG docker vagrant
 
-TERRAFORM_VERSION="0.12.21"
 cd /tmp && \
 wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
 unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
 
-VAULT_VERSION="1.3.2"
 cd /tmp && \
 wget https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip && \
 unzip -o vault_${VAULT_VERSION}_linux_amd64.zip -d /usr/bin
 
-AWSVULT_VERSION="v5.3.2"
 wget -N https://github.com/99designs/aws-vault/releases/download/${AWSVULT_VERSION}/aws-vault-linux-amd64 -O /usr/bin/aws-vault && \
 chmod +x /usr/bin/aws-vault
 
-
-GO_VERSION="1.13.7"
 cd /tmp && \
 wget -N https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz && \
 tar xvfz go${GO_VERSION}.linux-amd64.tar.gz && \
