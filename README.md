@@ -1,53 +1,45 @@
 # packer-templates
 
-Table of content.
+**Table of content.**
 
+<!-- toc -->
 
-<!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+- [Prerequisites](#prerequisites)
+- [Templates usage](#templates-usage)
+- [Vagrantfiles](#vagrantfiles)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
 
-- [packer-templates](#packer-templates)   
-- [Packer Templates](#packer-templates)   
-   - [Installing / Getting started](#installing-getting-started)   
-      - [Prerequisites](#prerequisites)   
-   - [Templates usage](#templates-usage)   
-   - [Vagrantfile](#vagrantfile)   
-   - [OS images.](#os-images)   
-   - [Changelog](#changelog)   
-   - [Contributing](#contributing)   
-   - [Authors](#authors)   
-   - [License](#license)   
-
-<!-- /MDTOC -->
-
-
+<!-- tocstop -->
 
 Vagrant boxes built with these packer templates are available at: https://app.vagrantup.com/p0bailey/
 
 
-# Packer Templates
+Debian and  Centos Packer templates with **[HCL2](https://bailey.st/2020/11/01/packer-virtualbox-builder-from-json-to-hcl.html)** syntax.
 
-Ubuntu, Debian and  Centos Packer templates with custom  scripts to bake Vagrant boxes and upload them into Vagrant cloud.
-
-Supported builds:
+**Supported builds:**
 
 
-|  Distribution | Debian  | Ubuntu  | CentOS  |Misc  |
-|---|---|---|---|---|
-|   |   9|  18.04  |7.6   |k8 (Kubernetes + Docker)   |
+|  Distribution | Version  | Template   |
+|---|---|---|
+| Debian  |   10.7|  [debian-10](debian-10)   |
+|  CentoOS 7 | 7.9 |  [centos-7](centos-7)   |
+|  CentoOS 8 | 8.2 |  [centos-8](centos-8)   |
 
 
+**OS images.**
 
-## Installing / Getting started
+Centos - http://centos.serverspace.co.uk/centos
 
-### Prerequisites
+Debian - http://cdimage.debian.org/debian-cd
 
-* Terraform - www.terraform.io
+## Prerequisites
 
 * Packer - www.packer.io
-
 * Vagrant - www.vagrantup.com
-
-* Virtualbox - https://www.virtualbox.org/
+* Virtualbox - https://www.virtualbox.org
 
 ## Templates usage
 
@@ -72,48 +64,8 @@ vagrant_stop_all               stop all Vagrant machines
 vagrant_status                 outputs status Vagrant environments for this user
 ```
 
-## Vagrantfile
+## Vagrantfiles
 
-Example Vagrantfile to consume Vagrant Boxes built from this repository.
-```
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-IP_ADDR = "192.168.56.55"
-HOSTNAME = "server-vagrant"
-BOX_NAME = "p0bailey/box_name"
-CPUS = "2"
-MEMORY = "1024"
-# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
-VAGRANTFILE_API_VERSION = "2"
-
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
-config.vm.define "box" do |box|
-
-    box.vm.box = "BOX_NAME"
-    box.vm.network :private_network, ip: "IP_ADDR"
-    box.vm.hostname = "HOSTNAME"
-    box.ssh.insert_key = false
-
-    box.vm.provider "virtualbox" do |v|
-        v.customize [ "modifyvm", :id, "--cpus", "CPUS" ]
-        v.customize [ "modifyvm", :id, "--memory", "MEMORY" ]
-    end
-
-end
- end
-
-
-```
-
-## OS images.
-
-Centos - http://centos.serverspace.co.uk/centos
-
-Ubuntu - http://releases.ubuntu.com/
-
-Debian - http://cdimage.debian.org/debian-cd
 
 
 ## Changelog
