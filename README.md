@@ -26,7 +26,7 @@ Debian and  Centos Packer templates with **[HCL2](https://bailey.st/2020/11/01/p
 |---|---|---|
 | Debian  |   10.7|  [debian-10](debian-10)   |
 |  CentoOS 7 | 7.9 |  [centos-7](centos-7)   |
-|  CentoOS 8 | 7.9 |  [centos-8](centos-8)   |
+|  CentoOS 8 | 8.2 |  [centos-8](centos-8)   |
 
 
 **OS images.**
