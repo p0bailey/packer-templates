@@ -25,11 +25,15 @@ Debian and  Centos Packer templates with **[HCL2](https://bailey.st/2020/11/01/p
 |  Distribution | Version  | Template   |
 |---|---|---|
 | Debian  |   10.7|  [debian-10](debian-10)   |
+| Debian   | 11.1  |  [debian-11](debian-11) |
+|Rocky Linux   | 8.4  | [rocky-8.4](rocky-8.4)  |
 |  CentoOS 7 | 7.9 |  [centos-7](centos-7)   |
 |  CentoOS 8 | 8.2 |  [centos-8](centos-8)   |
 
 
 **OS images.**
+
+RockyLinux - https://download.rockylinux.org/pub/rocky/8/isos/x86_64/
 
 Centos - http://centos.serverspace.co.uk/centos
 
