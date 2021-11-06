@@ -1,16 +1,16 @@
 #!/bin/sh -eux
 
+python3 -m pip install --upgrade --force-reinstall pip
+
+python3 -m pip install ansible molecule pytest-testinfra --ignore-installed PyYAML
+
+yum config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
 yum -y upgrade
 
-dnf -y upgrade 
+yum install -y git unzip vim
 
-pip3 install --upgrade pip
-
-dnf -y install ansible
-
-dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-
-dnf install docker-ce --nobest -y
+yum install docker-ce --nobest -y
 
 systemctl start docker
 
@@ -18,6 +18,6 @@ systemctl enable docker
 
 usermod -aG docker vagrant
 
-curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/v2.1.0/docker-compose-$(uname -s)-$(uname -m)" -o /bin/docker-compose
 
 chmod +x /bin/docker-compose
