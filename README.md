@@ -16,18 +16,14 @@
 
 Vagrant boxes built with these packer templates are available at: https://app.vagrantup.com/p0bailey/
 
-
 Debian and  RockyLinux Packer templates with **[HCL2](https://bailey.st/2020/11/01/packer-virtualbox-builder-from-json-to-hcl.html)** syntax.
 
 **Supported builds:**
-
 
 |  Distribution | Version  | Template   |
 |---|---|---|
 | Debian   | 11.1  |  [debian-11](debian-11) |
 |Rocky Linux   | 8.4  | [rocky-8.4](rocky-8.4)  |
-
-
 
 **OS images.**
 
